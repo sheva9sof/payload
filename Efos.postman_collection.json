@@ -11,7 +11,135 @@
 		},
 		{
 			"name": "Catalogs",
-			"item": []
+			"item": [
+				{
+					"name": "OrganizationType",
+					"item": [
+						{
+							"name": "Create Organization Type",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\":\"Organization\",\n\t\"description\":\"Organization description\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/organizationType",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"organizationType"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Organization Type",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/organizationType",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"organizationType"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Organization Type",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\":1,\n\t\"name\":\"Organization 2\",\n\t\"description\":\"Organization description\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/organizationType",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"organizationType"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Organization Type",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/organizationType/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"organizationType",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
 		},
 		{
 			"name": "User",
