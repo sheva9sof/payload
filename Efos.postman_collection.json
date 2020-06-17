@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "0cc355c9-f0d0-4274-b824-0d0014a6ce5d",
+		"name": "Efos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User profile",
+			"item": []
+		},
+		{
+			"name": "Catalogs",
+			"item": []
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"alexrampin@gmail.com\",\n\t\"password\":\"321\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/apis/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"apis",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"alexrampin@gmail.com\",\n\t\"vigencyDate\":1592272156000\n}"
+						},
+						"url": {
+							"raw": "{{url}}/user/active-user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"active-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Valid email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/apis/user/validate-email/sheva9sof@gmail.com2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"apis",
+								"user",
+								"validate-email",
+								"sheva9sof@gmail.com2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ResetPassword",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/apis/user/resetPassword/sheva9sof@gmail.com",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"apis",
+								"user",
+								"resetPassword",
+								"sheva9sof@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"sheva9sof@gmail.com\",\n\t\"password\":\"123\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/apis/user/updatePassword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"apis",
+								"user",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "feceec82-f427-41bd-a3ff-2658dfbc0e78",
+						"exec": [
+							"let authToken = postman.getResponseHeader(\"Auth_token\")",
+							"postman.setEnvironmentVariable(\"token\", \"Bearer \" + authToken)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\":\"sheva9sof@gmail.com\",\n\t\"password\":\"123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/apis/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apis",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
