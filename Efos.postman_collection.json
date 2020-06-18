@@ -1,13 +1,14 @@
 {
 	"info": {
-		"_postman_id": "0cc355c9-f0d0-4274-b824-0d0014a6ce5d",
+		"_postman_id": "82c1f15e-4288-4971-8001-191dfe740c36",
 		"name": "Efos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "User profile",
-			"item": []
+			"item": [],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Catalogs",
@@ -34,15 +35,15 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"name\":\"Organization\",\n\t\"description\":\"Organization description\"\n}"
+									"raw": "{\n\t\"description\":\"Organization description\"\n}"
 								},
 								"url": {
-									"raw": "{{url}}/organizationType",
+									"raw": "{{url}}/organization-type",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"organizationType"
+										"organization-type"
 									]
 								}
 							},
@@ -59,17 +60,13 @@
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
-									"raw": "{{url}}/organizationType",
+									"raw": "{{url}}/organization-type",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"organizationType"
+										"organization-type"
 									]
 								}
 							},
@@ -97,12 +94,12 @@
 									"raw": "{\n\t\"id\":1,\n\t\"name\":\"Organization 2\",\n\t\"description\":\"Organization description\"\n}"
 								},
 								"url": {
-									"raw": "{{url}}/organizationType",
+									"raw": "{{url}}/organization-type",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"organizationType"
+										"organization-type"
 									]
 								}
 							},
@@ -119,17 +116,13 @@
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
-									"raw": "{{url}}/organizationType/1",
+									"raw": "{{url}}/organization-type/1",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"organizationType",
+										"organization-type",
 										"1"
 									]
 								}
@@ -137,9 +130,1038 @@
 							"response": []
 						}
 					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "SocietyType",
+					"item": [
+						{
+							"name": "list society type",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/society-type/all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"society-type",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Society Type",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/society-type/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"society-type",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Society Type",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"pruebaSeis\",\r\n    \"status\":\"false\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/society-type/save",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"society-type",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put Society Type",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"1\",\r\n    \"name\":\"pruebaUno\",\r\n    \"status\":\"true\"\r\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/society-type/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"society-type",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Sector",
+					"item": [
+						{
+							"name": "Get Sector",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/sector/3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"sector",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Sector",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/sector/all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"sector",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Sector",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"prueba4\",\r\n    \"description\":\"prueba cuatro\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/sector/save",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"sector",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Sector",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"3\",\r\n    \"name\":\"pruebaTres\",\r\n    \"description\":\"prueba numero tres\"\r\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/sector/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"sector",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Organization",
+					"item": [
+						{
+							"name": "Create organization",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Organization\",\n\t\"description\":\"Organization description\",\n    \"organizationType\":1,\n    \"isInternalAlert\":false\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/organization",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"organization"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Organization",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Organization\",\n\t\"description\":\"Organization description\",\n    \"organizationType\":1,\n    \"isInternalAlert\":false\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/organization/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"organization",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Organization bi Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/organization/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"organization",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get organization",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/organization",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"organization"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "TypeResponsability",
+					"item": [
+						{
+							"name": "Get List Type Responsability",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/type-responsability/all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"type-responsability",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Type Responsability",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"pruebaCinco\",\r\n    \"status\":\"true\"\r\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/type-responsability/save",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"type-responsability",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Type Responsability",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/type-responsability/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"type-responsability",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put Type Responsability",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"3\",\r\n    \"name\":\"pruebaTres\",\r\n    \"status\":\"true\"\r\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/type-responsability/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"type-responsability",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Target Market",
+					"item": [
+						{
+							"name": "Create Target Market",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"pruebaMarketCuatro\",\r\n    \"description\":\"prueba de descripcion cuatro\",\r\n    \"isInternalAlert\":\"true\"\r\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/target-market/save",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"target-market",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Target Market",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/target-market/all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"target-market",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Target Market",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/target-market/3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"target-market",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Target Market",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"1\",\r\n    \"name\":\"pruebaUno\",\r\n    \"description\":\"update de la prueba\",\r\n    \"isInternalAlert\":\"true\"\r\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/target-market/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"target-market",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "AssociateType",
+					"item": [
+						{
+							"name": "Create Associate type",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Associate type\",\n    \"status\":true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/associate-type",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"associate-type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Associate type",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Associate type 2\",\n    \"status\":true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/associate-type/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"associate-type",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Associate type",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/associate-type/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"associate-type",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Associate types",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/associate-type",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"associate-type"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Kyc Program",
+					"item": [
+						{
+							"name": "Create kyc-program",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"name\",\n    \"description\":\"description\",\n    \"isInternalAlert\":true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/kyc-program",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"kyc-program"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update kyc-program",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"name1\",\n    \"description\":\"description\",\n    \"isInternalAlert\":true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/kyc-program/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"kyc-program",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get id kyc-program",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/kyc-program/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"kyc-program",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET kyc-program",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/kyc-program",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"kyc-program"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Alerts",
+					"item": [
+						{
+							"name": "Create Alerts",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"message\":\"message\",\n    \"description\":\"description\",\n    \"severity\": \"DANGER\",\n    \"isAdminAlert\":false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/alert",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"alert"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Alert",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"message\":\"message 2\",\n    \"description\":\"description\",\n    \"severity\": \"DANGER\",\n    \"isAdminAlert\":false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/alert/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"alert",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Alert by id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/alert/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"alert",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get alerts",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/alert",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"alert"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List alerts uses",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/alert/user",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"alert",
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "User",
@@ -217,10 +1239,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{url}}/apis/user/validate-email/sheva9sof@gmail.com2",
 							"host": [
@@ -241,19 +1259,15 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
-							"raw": "{{url}}/apis/user/resetPassword/sheva9sof@gmail.com",
+							"raw": "{{url}}/apis/user/reset-password/sheva9sof@gmail.com",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"apis",
 								"user",
-								"resetPassword",
+								"reset-password",
 								"sheva9sof@gmail.com"
 							]
 						}
@@ -277,20 +1291,21 @@
 							"raw": "{\n\t\"email\":\"sheva9sof@gmail.com\",\n\t\"password\":\"123\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/apis/user/updatePassword",
+							"raw": "{{url}}/apis/user/update-password",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"apis",
 								"user",
-								"updatePassword"
+								"update-password"
 							]
 						}
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Login",
@@ -298,7 +1313,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "feceec82-f427-41bd-a3ff-2658dfbc0e78",
+						"id": "7be6ffff-1d6a-4f15-9704-2d5b1c9349c8",
 						"exec": [
 							"let authToken = postman.getResponseHeader(\"Auth_token\")",
 							"postman.setEnvironmentVariable(\"token\", \"Bearer \" + authToken)"
@@ -322,12 +1337,10 @@
 					"raw": "{\n\t\"userName\":\"sheva9sof@gmail.com\",\n\t\"password\":\"123\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/apis/login",
-					"protocol": "http",
+					"raw": "{{url}}/apis/login",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "8080",
 					"path": [
 						"apis",
 						"login"
@@ -336,5 +1349,28 @@
 			},
 			"response": []
 		}
-	]
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1a4f5a5c-2c35-43b0-ba95-c78226cc3c4b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f1906714-3961-463a-9496-2b260ee89973",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
 }
